@@ -1,10 +1,8 @@
-from src.connections import get_spotify_client
+from src.artists import get_artists, read_artists
 
 def main():
-    sp = get_spotify_client()
-    results = sp.search(q="Coldplay", type="artist", limit=1)
-    artist = results["artists"]["items"][0]
-    print("Artista encontrado:", artist["name"])
+    results = read_artists()
+    print(results)
 
 if __name__ == "__main__":
     main()
